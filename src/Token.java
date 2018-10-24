@@ -2,68 +2,70 @@ import java.util.Hashtable;
 
 public class Token {
 
-    static{
-        Hashtable<String, Integer> codeTable = new Hashtable<>();
-        codeTable.put("class",1);
-        codeTable.put("public",2);
-        codeTable.put("private",3);
-        codeTable.put("this",4);
-        codeTable.put("static",5);
-        codeTable.put("void",6);
-        codeTable.put("for",7);
-        codeTable.put("while",8);
-        codeTable.put("if",9);
-        codeTable.put("do",10);
-        codeTable.put("break",11);
-        codeTable.put("null",12);
-        codeTable.put("new",13);
-        codeTable.put("true",14);
-        codeTable.put("false",15);
-        codeTable.put("extends",16);
-        codeTable.put("return",17);
-        codeTable.put("System",101);
-        codeTable.put("Object",102);
-        codeTable.put("int",103);
-        codeTable.put("string",104);
-        codeTable.put("double",105);
-        codeTable.put("char",106);
-        codeTable.put("boolean",107);
-        codeTable.put("infinite",300);
-        codeTable.put("try",301);
-        codeTable.put("catch",302);
-        codeTable.put("throws",303);
-        codeTable.put("float",304);
-        codeTable.put("+",1001);
-        codeTable.put("-",1002);
-        codeTable.put("*",1003);
-        codeTable.put("/",1004);
-        codeTable.put("%",1005);
-        codeTable.put("",1006);
-        codeTable.put("&",1007);
-        codeTable.put("|",1008);
-        codeTable.put("&&",1009);
-        codeTable.put("||",1010);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
-        codeTable.put("!",1011);
 
+    public class TokenType{
+        private Hashtable<String, Integer> keyWordTable = new Hashtable<>();
+        private Hashtable<String, Integer> reservedWordTable = new Hashtable<>();
+        private Hashtable<String, Integer> operatorTable = new Hashtable<>();
+        public TokenType(){
+            keyWordTable.put("class",1);
+            keyWordTable.put("public",2);
+            keyWordTable.put("private",3);
+            keyWordTable.put("this",4);
+            keyWordTable.put("static",5);
+            keyWordTable.put("void",6);
+            keyWordTable.put("for",7);
+            keyWordTable.put("while",8);
+            keyWordTable.put("if",9);
+            keyWordTable.put("do",10);
+            keyWordTable.put("break",11);
+            keyWordTable.put("null",12);
+            keyWordTable.put("new",13);
+            keyWordTable.put("true",14);
+            keyWordTable.put("false",15);
+            keyWordTable.put("extends",16);
+            keyWordTable.put("return",17);
+            keyWordTable.put("System",101);
+            keyWordTable.put("Object",102);
+            keyWordTable.put("int",103);
+            keyWordTable.put("string",104);
+            keyWordTable.put("double",105);
+            keyWordTable.put("char",106);
+            keyWordTable.put("boolean",107);
+
+            reservedWordTable.put("infinite",300);
+            reservedWordTable.put("try",301);
+            reservedWordTable.put("catch",302);
+            reservedWordTable.put("throws",303);
+            reservedWordTable.put("float",304);
+
+            operatorTable.put("+",1001);
+            operatorTable.put("-",1002);
+            operatorTable.put("*",1003);
+            operatorTable.put("/",1004);
+            operatorTable.put("%",1005);
+            operatorTable.put("~",1006);
+            operatorTable.put("&",1007);
+            operatorTable.put("|",1008);
+            operatorTable.put("&&",1009);
+            operatorTable.put("||",1010);
+            operatorTable.put("!",1011);
+            operatorTable.put(">",1012);
+            operatorTable.put("<",1013);
+            operatorTable.put("=",1014);
+            operatorTable.put("==",1015);
+            operatorTable.put(">=",1016);
+            operatorTable.put("<=",1017);
+            operatorTable.put("!=",1018);
+            operatorTable.put("{",1019);
+            operatorTable.put("}",1020);
+            operatorTable.put("[",1021);
+            operatorTable.put("]",1022);
+            operatorTable.put("(",1023);
+            operatorTable.put(")",1024);
+            operatorTable.put(";",1025);
+            operatorTable.put(".",1026);
+        }
 
     }
 

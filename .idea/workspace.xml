@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="039ba8d1-4769-405b-a24b-33f0abd18101" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Lexer/LexerScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lexer/Token.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Lexer/TokenType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MiniException/AbstractException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MiniException/LexicalException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lexer/LexerScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexer/LexerScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexer/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Lexer/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Lexer/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MiniException/LexicalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MiniException/LexicalException.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="152">
+              <caret line="11" column="128" selection-start-line="11" selection-start-column="128" selection-end-line="11" selection-end-column="128" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -42,54 +34,70 @@
       <file leaf-file-name="Token.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lexer/Token.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="140">
+              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
               <folding>
                 <element signature="e#658#659#0" expanded="true" />
-                <element signature="e#740#741#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="TokenType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Lexer/TokenType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="368">
+              <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="misc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="uiDesigner.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="vcs.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="LexerScanner.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Lexer/LexerScanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="1919">
+              <caret line="459" column="19" selection-start-line="459" selection-start-column="19" selection-end-line="459" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1959#1960#0" expanded="true" />
-                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="class#LexerReader#0;class#LexerScanner#0" />
+                <element signature="method#start#0;class#LexerScanner#0" />
+                <element signature="method#identifierOrKeyword#0;class#LexerScanner#0" />
+                <element signature="method#constInteger#0;class#LexerScanner#0" />
+                <element signature="method#constDouble#0;class#LexerScanner#0" />
+                <element signature="method#dot#0;class#LexerScanner#0" />
+                <element signature="method#operationDivide#0;class#LexerScanner#0" />
+                <element signature="method#singleLineComment#0;class#LexerScanner#0" />
+                <element signature="method#multiLineCommentBegin#0;class#LexerScanner#0" />
+                <element signature="method#multiLineCommentEnd#0;class#LexerScanner#0" />
+                <element signature="method#constCharBegin#0;class#LexerScanner#0" />
+                <element signature="method#constChar#0;class#LexerScanner#0" />
+                <element signature="method#constCharEnd#0;class#LexerScanner#0" />
+                <element signature="method#constStringBegin#0;class#LexerScanner#0" />
+                <element signature="method#operationPlus#0;class#LexerScanner#0" />
+                <element signature="method#operationMinus#0;class#LexerScanner#0" />
+                <element signature="method#operationMultiply#0;class#LexerScanner#0" />
+                <element signature="method#operationMode#0;class#LexerScanner#0" />
+                <element signature="method#operationAssignment#0;class#LexerScanner#0" />
+                <element signature="method#operationEqual#0;class#LexerScanner#0" />
+                <element signature="method#operationLess#0;class#LexerScanner#0" />
+                <element signature="method#operationLessOrEqual#0;class#LexerScanner#0" />
+                <element signature="method#operationGreater#0;class#LexerScanner#0" />
+                <element signature="method#operationGreaterOrEqual#0;class#LexerScanner#0" />
+                <element signature="method#operationBooleanNot#0;class#LexerScanner#0" />
+                <element signature="method#operationGreaterOrEqual#1;class#LexerScanner#0" />
+                <element signature="method#operationBitOr#0;class#LexerScanner#0" />
+                <element signature="method#operationBooleanOr#0;class#LexerScanner#0" />
+                <element signature="method#operationBitAnd#0;class#LexerScanner#0" />
+                <element signature="method#operationBooleanAnd#0;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#0;class#LexerScanner#0" />
+                <element signature="method#operationLeftBigBracket#0;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#2;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#3;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#4;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#5;class#LexerScanner#0" />
+                <element signature="method#operationBitNot#6;class#LexerScanner#0" />
+                <element signature="method#generateToken#0;class#LexerScanner#0" />
               </folding>
             </state>
           </provider>
@@ -100,12 +108,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="190">
               <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <element signature="e#193#194#0" expanded="true" />
-                <element signature="e#218#219#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -113,8 +115,8 @@
       <file leaf-file-name="LexicalException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MiniException/LexicalException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="121">
+              <caret line="15" column="48" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -143,13 +145,13 @@
         <option value="$PROJECT_DIR$/src/LexerScanner.java" />
         <option value="$PROJECT_DIR$/src/Exception/AbstractException.java" />
         <option value="$PROJECT_DIR$/src/Exception/LexicalException.java" />
-        <option value="$PROJECT_DIR$/src/Lexer/LexerScanner.java" />
+        <option value="$PROJECT_DIR$/src/MiniException/AbstractException.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Lexer/Token.java" />
         <option value="$PROJECT_DIR$/src/Lexer/TokenType.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/MiniException/AbstractException.java" />
         <option value="$PROJECT_DIR$/src/MiniException/LexicalException.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Lexer/LexerScanner.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -163,8 +165,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="42" />
-    <option name="y" value="15" />
+    <option name="x" value="106" />
+    <option name="y" value="33" />
     <option name="width" value="1273" />
     <option name="height" value="671" />
   </component>
@@ -180,13 +182,35 @@
               <item name="MiniJavaLanguage" type="b2602c69:ProjectViewProjectNode" />
               <item name="MiniJavaLanguage" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MiniJavaLanguage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniJavaLanguage" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MiniJavaLanguage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniJavaLanguage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MiniJavaLanguage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniJavaLanguage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Lexer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MiniJavaLanguage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MiniJavaLanguage" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="MiniException" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -194,7 +218,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -273,19 +297,30 @@
       <updated>1540464635019</updated>
       <workItem from="1540464640710" duration="1254000" />
       <workItem from="1540738379236" duration="1914000" />
-      <workItem from="1540777514419" duration="8759000" />
+      <workItem from="1540777514419" duration="9068000" />
+      <workItem from="1540792475607" duration="17452000" />
+      <workItem from="1540818427281" duration="8496000" />
     </task>
+    <task id="LOCAL-00001" summary="Finish keyword and identifier scanning">
+      <created>1540787161558</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1540787161558</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11927000" />
+    <option name="totallyTimeSpent" value="38184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3289689" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -293,13 +328,12 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4844517" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2193646" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -311,6 +345,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,19 +354,208 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finish keyword and identifier scanning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish keyword and identifier scanning" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <properties />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/TokenType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="88" column="68" selection-start-line="88" selection-start-column="68" selection-end-line="88" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/LexerScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="149" column="48" lean-forward="true" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#LexerReader#0;class#LexerScanner#0" />
+            <element signature="method#start#0;class#LexerScanner#0" />
+            <element signature="method#identifierOrKeyword#0;class#LexerScanner#0" />
+            <element signature="method#constInteger#0;class#LexerScanner#0" />
+            <element signature="method#constDouble#0;class#LexerScanner#0" />
+            <element signature="method#dot#0;class#LexerScanner#0" />
+            <element signature="method#operationDivide#0;class#LexerScanner#0" />
+            <element signature="method#singleLineComment#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentBegin#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentEnd#0;class#LexerScanner#0" />
+            <element signature="method#constCharBegin#0;class#LexerScanner#0" />
+            <element signature="method#constChar#0;class#LexerScanner#0" />
+            <element signature="method#constCharEnd#0;class#LexerScanner#0" />
+            <element signature="method#constStringBegin#0;class#LexerScanner#0" />
+            <element signature="method#operationPlus#0;class#LexerScanner#0" />
+            <element signature="method#operationMinus#0;class#LexerScanner#0" />
+            <element signature="method#operationMultiply#0;class#LexerScanner#0" />
+            <element signature="method#operationMode#0;class#LexerScanner#0" />
+            <element signature="method#operationAssignment#0;class#LexerScanner#0" />
+            <element signature="method#operationEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationLess#0;class#LexerScanner#0" />
+            <element signature="method#operationLessOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationGreater#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanNot#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#1;class#LexerScanner#0" />
+            <element signature="method#operationBitOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBitAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#0;class#LexerScanner#0" />
+            <element signature="method#operationLeftBigBracket#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#2;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#3;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#4;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#5;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#6;class#LexerScanner#0" />
+            <element signature="method#generateToken#0;class#LexerScanner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/AbstractException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/LexicalException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/LexerScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#LexerReader#0;class#LexerScanner#0" />
+            <element signature="method#start#0;class#LexerScanner#0" />
+            <element signature="method#identifierOrKeyword#0;class#LexerScanner#0" />
+            <element signature="method#constInteger#0;class#LexerScanner#0" />
+            <element signature="method#constDouble#0;class#LexerScanner#0" />
+            <element signature="method#dot#0;class#LexerScanner#0" />
+            <element signature="method#operationDivide#0;class#LexerScanner#0" />
+            <element signature="method#singleLineComment#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentBegin#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentEnd#0;class#LexerScanner#0" />
+            <element signature="method#constCharBegin#0;class#LexerScanner#0" />
+            <element signature="method#constChar#0;class#LexerScanner#0" />
+            <element signature="method#constCharEnd#0;class#LexerScanner#0" />
+            <element signature="method#constStringBegin#0;class#LexerScanner#0" />
+            <element signature="method#operationPlus#0;class#LexerScanner#0" />
+            <element signature="method#operationMinus#0;class#LexerScanner#0" />
+            <element signature="method#operationMultiply#0;class#LexerScanner#0" />
+            <element signature="method#operationMode#0;class#LexerScanner#0" />
+            <element signature="method#operationAssignment#0;class#LexerScanner#0" />
+            <element signature="method#operationEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationLess#0;class#LexerScanner#0" />
+            <element signature="method#operationLessOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationGreater#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanNot#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#1;class#LexerScanner#0" />
+            <element signature="method#operationBitOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBitAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#0;class#LexerScanner#0" />
+            <element signature="method#operationLeftBigBracket#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#2;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#3;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#4;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#5;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#6;class#LexerScanner#0" />
+            <element signature="method#generateToken#0;class#LexerScanner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/AbstractException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/LexicalException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -348,7 +572,7 @@
           <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
           <folding>
             <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -359,8 +583,44 @@
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="class#LexerReader#0;class#LexerScanner#0" />
+            <element signature="method#start#0;class#LexerScanner#0" />
+            <element signature="method#identifierOrKeyword#0;class#LexerScanner#0" />
+            <element signature="method#constInteger#0;class#LexerScanner#0" />
+            <element signature="method#constDouble#0;class#LexerScanner#0" />
+            <element signature="method#dot#0;class#LexerScanner#0" />
+            <element signature="method#operationDivide#0;class#LexerScanner#0" />
+            <element signature="method#singleLineComment#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentBegin#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentEnd#0;class#LexerScanner#0" />
+            <element signature="method#constCharBegin#0;class#LexerScanner#0" />
+            <element signature="method#constChar#0;class#LexerScanner#0" />
+            <element signature="method#constCharEnd#0;class#LexerScanner#0" />
+            <element signature="method#constStringBegin#0;class#LexerScanner#0" />
+            <element signature="method#operationPlus#0;class#LexerScanner#0" />
+            <element signature="method#operationMinus#0;class#LexerScanner#0" />
+            <element signature="method#operationMultiply#0;class#LexerScanner#0" />
+            <element signature="method#operationMode#0;class#LexerScanner#0" />
+            <element signature="method#operationAssignment#0;class#LexerScanner#0" />
+            <element signature="method#operationEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationLess#0;class#LexerScanner#0" />
+            <element signature="method#operationLessOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationGreater#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanNot#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#1;class#LexerScanner#0" />
+            <element signature="method#operationBitOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBitAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#0;class#LexerScanner#0" />
+            <element signature="method#operationLeftBigBracket#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#2;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#3;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#4;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#5;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#6;class#LexerScanner#0" />
+            <element signature="method#generateToken#0;class#LexerScanner#0" />
           </folding>
         </state>
       </provider>
@@ -378,7 +638,7 @@
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -387,69 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexer/TokenType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
-          <folding>
-            <element signature="e#4294#4295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexer/Token.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#740#741#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Lexer/LexerScanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#1988#1989#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiniException/LexicalException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MiniException/AbstractException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <element signature="e#193#194#0" expanded="true" />
-            <element signature="e#218#219#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -468,7 +665,97 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/AbstractException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/Token.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <folding>
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/TokenType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="90" column="69" selection-start-line="90" selection-start-column="69" selection-end-line="90" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MiniException/LexicalException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Lexer/LexerScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="459" column="19" selection-start-line="459" selection-start-column="19" selection-end-line="459" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#LexerReader#0;class#LexerScanner#0" />
+            <element signature="method#start#0;class#LexerScanner#0" />
+            <element signature="method#identifierOrKeyword#0;class#LexerScanner#0" />
+            <element signature="method#constInteger#0;class#LexerScanner#0" />
+            <element signature="method#constDouble#0;class#LexerScanner#0" />
+            <element signature="method#dot#0;class#LexerScanner#0" />
+            <element signature="method#operationDivide#0;class#LexerScanner#0" />
+            <element signature="method#singleLineComment#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentBegin#0;class#LexerScanner#0" />
+            <element signature="method#multiLineCommentEnd#0;class#LexerScanner#0" />
+            <element signature="method#constCharBegin#0;class#LexerScanner#0" />
+            <element signature="method#constChar#0;class#LexerScanner#0" />
+            <element signature="method#constCharEnd#0;class#LexerScanner#0" />
+            <element signature="method#constStringBegin#0;class#LexerScanner#0" />
+            <element signature="method#operationPlus#0;class#LexerScanner#0" />
+            <element signature="method#operationMinus#0;class#LexerScanner#0" />
+            <element signature="method#operationMultiply#0;class#LexerScanner#0" />
+            <element signature="method#operationMode#0;class#LexerScanner#0" />
+            <element signature="method#operationAssignment#0;class#LexerScanner#0" />
+            <element signature="method#operationEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationLess#0;class#LexerScanner#0" />
+            <element signature="method#operationLessOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationGreater#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanNot#0;class#LexerScanner#0" />
+            <element signature="method#operationGreaterOrEqual#1;class#LexerScanner#0" />
+            <element signature="method#operationBitOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanOr#0;class#LexerScanner#0" />
+            <element signature="method#operationBitAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBooleanAnd#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#0;class#LexerScanner#0" />
+            <element signature="method#operationLeftBigBracket#0;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#2;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#3;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#4;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#5;class#LexerScanner#0" />
+            <element signature="method#operationBitNot#6;class#LexerScanner#0" />
+            <element signature="method#generateToken#0;class#LexerScanner#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="128" selection-start-line="11" selection-start-column="128" selection-end-line="11" selection-end-column="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

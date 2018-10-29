@@ -9,8 +9,7 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            LexerScanner lexerScanner = new LexerScanner("abc class try");
-            List<Token> tokens = lexerScanner.getTokens();
+            List<Token> tokens = LexerScanner.scan("+/ *-&*% >=  > != ! dsfkjsahk213 123jbfs // 12321 \n\n\n /*  \n\n21fslkf **/  \"1231232'1\"  ''");
             for (Token token: tokens)
                 System.out.println(token);
         } catch (LexicalException e) {

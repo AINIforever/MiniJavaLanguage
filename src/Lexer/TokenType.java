@@ -85,9 +85,13 @@ public class TokenType {
     static final TokenType IDENTIFIER = new TokenType("Identifier", 1100);
     static final TokenType CONST_INTEGER = new TokenType("Const integer", 1101);
     static final TokenType CONST_DOUBLE = new TokenType("Const double", 1102);
+    static final TokenType SINGLE_LINE_COMMENT = new TokenType("Single line comment", 1106);
+    static final TokenType MULTI_LINE_COMMENT = new TokenType("Multi line comment", 1107);
+    static final TokenType CONST_CHAR = new TokenType("Const char", 1104);
+    static final TokenType CONST_STRING = new TokenType("Const string", 1105);
 
     @Override
     public String toString() {
-        return String.format("%-15s %-8s", description, number);
+        return String.format("%-25s %-8d", description, number);
     }
 }

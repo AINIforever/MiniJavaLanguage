@@ -95,3 +95,4 @@ public class TokenType {
         return String.format("%-25s %-8d", description, number);
     }
 }
+

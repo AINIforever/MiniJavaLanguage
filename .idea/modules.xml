@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MiniJavaLanguage.iml" filepath="$PROJECT_DIR$/MiniJavaLanguage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UITest.iml" filepath="$PROJECT_DIR$/UITest.iml" />
     </modules>
   </component>
 </project>

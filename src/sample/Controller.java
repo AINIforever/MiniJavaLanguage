@@ -18,28 +18,27 @@ public class Controller {
     public TextArea input;
 
     public class MyRunnable implements Runnable {
-        String inputString = input.getText();
-        String outputString = "";
-        public void run(){
+
+        public void run() {
+
+            String inputString = input.getText();
+            StringBuilder stringBuilder = new StringBuilder();
+
             try {
                 List<Token> tokens = LexerScanner.scan(inputString);
-                for (Token token: tokens){
-                    System.out.println(token);
-                    outputString += token.toString() + "\n";
-                }
-
-
+                for (Token token: tokens)
+                    stringBuilder.append(token.toString()).append('\n');
             } catch (LexicalException e) {
-                System.out.println(e.toString());
+                stringBuilder.setLength(0);
+                stringBuilder.append(e.toString());
             }
-            output.setText(outputString);
+            output.setText(stringBuilder.toString());
         }
     }
 
     public void analyze(ActionEvent actionEvent) {
         Thread thread = new Thread(new MyRunnable());
         thread.start();
-
     }
 
 

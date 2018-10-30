@@ -84,7 +84,7 @@ public class LexerScanner {
         } else if (ch == '\'') {
             reader.next();
             builder.append(ch);
-            constCharBegin(reader, startRow, startColumn, builder, tokens);
+            constCharSingleCharBegin(reader, startRow, startColumn, builder, tokens);
         } else if (ch == '\"') {
             reader.next();
             builder.append(ch);
@@ -275,14 +275,111 @@ public class LexerScanner {
         }
     }
 
-    private static void constCharBegin(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+    private static void constCharSingleCharBegin(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
         char ch = reader.previewNext();
         if (ch == '\04')
             throw new LexicalException(startRow, startColumn, LexicalException.Type.INCOMPLETE_CONST_CHAR, builder.toString());
         if (ch == '\n')
             throw new LexicalException(startRow, startColumn, LexicalException.Type.MULTI_LINE_CONST_CHAR, builder.toString());
-        reader.next();
-        builder.append(ch);
+        if (ch == '\\') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferred(reader, startRow, startColumn, builder, tokens);
+        } else if (ch == '\'')
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.CONST_CHAR_NOTHING, builder.append(ch).toString());
+        else {
+            reader.next();
+            builder.append(ch);
+            constChar(reader, startRow, startColumn, builder, tokens);
+        }
+    }
+
+    private static void constCharSingleCharTransferred(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch == 'a' || ch == 'b' || ch == 'f' || ch == 'r' || ch == 'n' || ch == 't' || ch == '\'' || ch == '\"' || ch == '\\') {
+            reader.next();
+            builder.append(ch);
+            constChar(reader, startRow, startColumn, builder, tokens);
+        } else if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredDDD1(reader, startRow, startColumn, builder, tokens, ch - '0');
+        } else if (ch == 'u') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredUUUU(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_TRANSFERRED_CHAR, builder.append(ch).toString());
+    }
+
+    private static void constCharSingleCharTransferredDDD1(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredDDD2(reader, startRow, startColumn, builder, tokens, number * 8 + ch - '0');
+        } else
+            constChar(reader, startRow, startColumn, builder, tokens);
+    }
+
+    private static void constCharSingleCharTransferredDDD2(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredDDD3(reader, startRow, startColumn, builder, tokens, number * 8 + ch - '0');
+        } else
+            constChar(reader, startRow, startColumn, builder, tokens);
+    }
+
+    private static void constCharSingleCharTransferredDDD3(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        if (number <= 127)
+            constChar(reader, startRow, startColumn, builder, tokens);
+        else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.OCTAL_TRANSFERRED_TOO_BIG, builder.toString());
+    }
+
+    private static void constCharSingleCharTransferredUUUU(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredUUUU1(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constCharSingleCharTransferredUUUU1(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredUUUU2(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constCharSingleCharTransferredUUUU2(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredUUUU3(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constCharSingleCharTransferredUUUU3(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constCharSingleCharTransferredUUUU4(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constCharSingleCharTransferredUUUU4(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
         constChar(reader, startRow, startColumn, builder, tokens);
     }
 
@@ -306,17 +403,113 @@ public class LexerScanner {
 
     private static void constStringBegin(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
         char ch = reader.previewNext();
-        if (ch == '\004') {
+        if (ch == '\004')
             throw new LexicalException(startRow, startColumn, LexicalException.Type.INCOMPLETE_CONST_STRING, builder.toString());
-        } else if (ch == '\"') {
+        if (ch == '\n')
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.MULTI_LINE_CONST_STRING, builder.toString());
+        if (ch == '\"') {
             reader.next();
             builder.append(ch);
             constStringEnd(reader, startRow, startColumn, builder, tokens);
-        } else {
+        } else if (ch == '\\') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferred(reader, startRow, startColumn, builder, tokens);
+        }
+        else {
             reader.next();
             builder.append(ch);
             constStringBegin(reader, startRow, startColumn, builder, tokens);
         }
+    }
+
+    private static void constStringSingleCharTransferred(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch == 'a' || ch == 'b' || ch == 'f' || ch == 'r' || ch == 'n' || ch == 't' || ch == '\'' || ch == '\"' || ch == '\\') {
+            reader.next();
+            builder.append(ch);
+            constStringBegin(reader, startRow, startColumn, builder, tokens);
+        } else if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredDDD1(reader, startRow, startColumn, builder, tokens, ch - '0');
+        } else if (ch == 'u') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredUUUU(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_TRANSFERRED_CHAR, builder.append(ch).toString());
+    }
+
+    private static void constStringSingleCharTransferredDDD1(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredDDD2(reader, startRow, startColumn, builder, tokens, number * 8 + ch - '0');
+        } else
+            constStringBegin(reader, startRow, startColumn, builder, tokens);
+    }
+
+    private static void constStringSingleCharTransferredDDD2(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '7') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredDDD3(reader, startRow, startColumn, builder, tokens, number * 8 + ch - '0');
+        } else
+            constStringBegin(reader, startRow, startColumn, builder, tokens);
+    }
+
+    private static void constStringSingleCharTransferredDDD3(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, int number) throws LexicalException {
+        if (number <= 127)
+            constStringBegin(reader, startRow, startColumn, builder, tokens);
+        else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.OCTAL_TRANSFERRED_TOO_BIG, builder.toString());
+    }
+
+    private static void constStringSingleCharTransferredUUUU(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredUUUU1(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constStringSingleCharTransferredUUUU1(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredUUUU2(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constStringSingleCharTransferredUUUU2(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredUUUU3(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constStringSingleCharTransferredUUUU3(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        char ch = reader.previewNext();
+        if (ch >= '0' && ch <= '9' || ch >= 'A' && ch <= 'F' || ch >= 'a' && ch <= 'f') {
+            reader.next();
+            builder.append(ch);
+            constStringSingleCharTransferredUUUU4(reader, startRow, startColumn, builder, tokens);
+        } else
+            throw new LexicalException(startRow, startColumn, LexicalException.Type.WRONG_HEXADECIMAL_TRANSFERRED, builder.append(ch).toString());
+    }
+
+    private static void constStringSingleCharTransferredUUUU4(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) throws LexicalException {
+        constStringBegin(reader, startRow, startColumn, builder, tokens);
     }
 
     private static void constStringEnd(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {

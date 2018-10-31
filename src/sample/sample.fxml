@@ -18,9 +18,9 @@
     <TextArea fx:id="input" prefWidth="200.0" wrapText="true" GridPane.columnIndex="0" GridPane.margin="$x1" GridPane.rowIndex="0" />
   </children>
   <columnConstraints>
-    <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" maxWidth="600.0" minWidth="200.0" />
+    <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="100.0" />
-    <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" maxWidth="600.0" minWidth="200.0" />
+    <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />

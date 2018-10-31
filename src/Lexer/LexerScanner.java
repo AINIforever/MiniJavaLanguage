@@ -159,7 +159,12 @@ public class LexerScanner {
             operationRightSmallBracket(reader, startRow, startColumn, builder, tokens);
         } else if (ch == ' ' || ch == '\n' || ch == '\t') {
             reader.next();
-        } else if (ch == '\004') {
+        } else if (ch == ';') {
+            reader.next();
+            builder.append(ch);
+            operationSemicolon(reader, startRow, startColumn, builder, tokens);
+        }
+        else if (ch == '\004') {
         }
         else
             throw new LexicalException(startRow, startColumn, LexicalException.Type.UNEXPECTED_CHAR, builder.append(ch).toString());
@@ -648,6 +653,10 @@ public class LexerScanner {
 
     private static void operationRightSmallBracket(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {
         generateToken(TokenType.operatorTable.get(")"), startRow, startColumn, builder, tokens);
+    }
+
+    private static void operationSemicolon(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {
+        generateToken(TokenType.operatorTable.get(";"), startRow, startColumn, builder, tokens);
     }
 
     private static void generateToken(TokenType tokenType, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {

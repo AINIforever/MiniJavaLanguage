@@ -2,35 +2,38 @@ package Lexer;
 
 public class Token {
 
-    private String value;
+    private String text;
 
     private TokenType tokenType;
+
+    private Object value;
 
     private int row;
     private int column;
 
-    public static Token creator(String s, TokenType tokenType, int row, int column) {
-        return new Token(s, tokenType, row, column);
+    public static Token creator(String s, TokenType tokenType, int row, int column, Object value) {
+        return new Token(s, tokenType, row, column, value);
     }
 
-    private Token(String s, TokenType tokenType, int row, int column) {
-        this.value = s;
+    private Token(String text, TokenType tokenType, int row, int column, Object value) {
+        this.text = text;
         this.tokenType = tokenType;
         this.row = row;
         this.column = column;
+        this.value = value;
     }
 
     public TokenType getTokenType() {
         return tokenType;
     }
 
-    public String getValue() {
-        return value;
+    public String getText() {
+        return text;
     }
 
     @Override
     public String toString() {
-        return String.format("%-20s %s", value, tokenType.toString());
+        return String.format("%-20s %-10s %-10s", text, null == value ? "":value.toString(), tokenType.toString());
     }
 
     public int getRow() {
@@ -39,14 +42,6 @@ public class Token {
 
     public int getColumn() {
         return column;
-    }
-
-    public Token toNegative() {
-        if (value.startsWith("-"))
-            value = value.substring(1);
-        else
-            value = "-" + value;
-        return this;
     }
 
 }

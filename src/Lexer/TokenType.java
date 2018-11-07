@@ -80,11 +80,13 @@ public class TokenType {
         operatorTable.put(")", new TokenType(")", 1024));
         operatorTable.put(";", new TokenType(";", 1025));
         operatorTable.put(".", new TokenType(".", 1026));
+        operatorTable.put(",", new TokenType(",", 1027));
     }
 
     static final TokenType IDENTIFIER = new TokenType("Identifier", 1100);
     static final TokenType CONST_INTEGER = new TokenType("Const integer", 1101);
     static final TokenType CONST_DOUBLE = new TokenType("Const double", 1102);
+    static final TokenType CONST_BOOL = new TokenType("Const bool", 1103);
     static final TokenType SINGLE_LINE_COMMENT = new TokenType("Single line comment", 1106);
     static final TokenType MULTI_LINE_COMMENT = new TokenType("Multi line comment", 1107);
     static final TokenType CONST_CHAR = new TokenType("Const char", 1104);

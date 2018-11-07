@@ -167,8 +167,11 @@ public class LexerScanner {
             reader.next();
             builder.append(ch);
             operationSemicolon(reader, startRow, startColumn, builder, tokens);
-        }
-        else if (ch == '\004') {
+        } else if (ch == ',') {
+            reader.next();
+            builder.append(ch);
+            operationComma(reader, startRow, startColumn, builder, tokens);
+        } else if (ch == '\004') {
         }
         else
             throw new LexicalException(startRow, startColumn, LexicalException.Type.UNEXPECTED_CHAR, builder.append(ch).toString());
@@ -233,7 +236,10 @@ public class LexerScanner {
         } else {
             String value = builder.toString();
             if (TokenType.keyWordTable.containsKey(value)) {
-                generateToken(TokenType.keyWordTable.get(value), startRow, startColumn, builder, tokens, null);
+                if (value.equals("true") || value.equals("false"))
+                    generateToken(TokenType.CONST_BOOL, startRow, startColumn, builder, tokens, Boolean.parseBoolean(value));
+                else
+                    generateToken(TokenType.keyWordTable.get(value), startRow, startColumn, builder, tokens, null);
             } else if (TokenType.reservedWordTable.containsKey(value)) {
                 throw new LexicalException(startRow, startColumn, LexicalException.Type.RESERVED_KEYWORD, value);
             } else
@@ -803,6 +809,10 @@ public class LexerScanner {
 
     private static void operationSemicolon(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {
         generateToken(TokenType.operatorTable.get(";"), startRow, startColumn, builder, tokens, null);
+    }
+
+    private static void operationComma(LexerReader reader, int startRow, int startColumn, StringBuilder builder, List<Token> tokens) {
+        generateToken(TokenType.operatorTable.get(","), startRow, startColumn, builder, tokens, null);
     }
 
     private static void generateToken(TokenType tokenType, int startRow, int startColumn, StringBuilder builder, List<Token> tokens, Object value) {

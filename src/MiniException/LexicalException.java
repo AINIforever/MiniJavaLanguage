@@ -25,6 +25,11 @@ public class LexicalException extends AbstractException {
         public static final Type WRONG_TRANSFERRED_CHAR = new Type(1005, "don't have this transferred char.");
         public static final Type OCTAL_TRANSFERRED_TOO_BIG = new Type(1005, "octal transferred char should be in 0-127.");
         public static final Type WRONG_HEXADECIMAL_TRANSFERRED = new Type(1005, "hexadecimal transferred must have 4 numbers");
+        public static final Type INTEGER_OUT_OF_RANGE = new Type(1005, "integer number too large");
+        public static final Type DOUBLE_OUT_OF_RANGE = new Type(1005, "double number too large");
+        public static final Type UNEXPECTED_CHAR_IN_OCT_NUMBER = new Type(1005, "unexpected char in oct number");
+        public static final Type ILLEGAL_HEX_NUMBER = new Type(1005, "illegal hex number");
+
     }
 
     private Type type;

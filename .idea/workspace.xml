@@ -248,7 +248,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -502,7 +502,7 @@
       <workItem from="1540896753382" duration="1305000" />
       <workItem from="1540952638717" duration="399000" />
       <workItem from="1540953079850" duration="4320000" />
-      <workItem from="1542275291632" duration="9363000" />
+      <workItem from="1542275291632" duration="9536000" />
     </task>
     <task id="LOCAL-00001" summary="fix UI">
       <created>1540952911510</created>
@@ -529,10 +529,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21420000" />
+    <option name="totallyTimeSpent" value="21593000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

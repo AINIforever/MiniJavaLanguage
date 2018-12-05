@@ -41,7 +41,7 @@ public class TokenType {
         keyWordTable.put("System", new TokenType("System", 101));
         keyWordTable.put("Object", new TokenType("Object", 102));
         keyWordTable.put("int", new TokenType("int", 103));
-        keyWordTable.put("string", new TokenType("string", 104));
+        keyWordTable.put("String", new TokenType("String", 104));
         keyWordTable.put("double", new TokenType("double", 105));
         keyWordTable.put("char", new TokenType("char", 106));
         keyWordTable.put("boolean", new TokenType("boolean", 107));
@@ -94,7 +94,7 @@ public class TokenType {
 
     @Override
     public String toString() {
-        return String.format("%-25s %-8d", description, number);
+        return String.format("%-30s %-8d", description, number);
     }
 }
 

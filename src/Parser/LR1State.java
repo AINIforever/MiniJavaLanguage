@@ -1,9 +1,6 @@
 package Parser;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class LR1State {
 
@@ -22,6 +19,7 @@ public class LR1State {
         this.index = index;
         this.actionMap = new HashMap<AbstractElement, Action>();
         hashCode = lr1ItemSet.hashCode() + index + actionMap.hashCode();
+        fromList = new ArrayList<>();
     }
 
     public Action addAction(AbstractElement abstractElement, Action action) {

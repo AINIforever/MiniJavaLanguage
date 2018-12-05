@@ -121,18 +121,23 @@ public class Grammar {
                     if (null != currentState.addAction(tempAbstractElement, new Action(Action.SHIFT, tempIndex))) {
                         System.out.println(currentState);
                         throw new ParserException(0, 0, ParserException.GRAMMAR_EXCEPTION);
+                    } else {
+                        states.get(tempIndex).addFrom(currentState.index);
                     }
                 } else {
                     if (null != currentState.addAction(tempAbstractElement, new Action(Action.SHIFT, tempIndex))) {
                         System.out.println(currentState);
                         throw new ParserException(0, 0, ParserException.GRAMMAR_EXCEPTION);
+                    } else {
+                        states.get(tempIndex).addFrom(currentState.index);
                     }
                 }
             }
             index++;
         }
 
-        System.out.println(states.size());
+//        for (int i = 0, length = states.size(); i <length; i++)
+//            System.out.println(states.get(i));
 
         Rule tempRule;
         for (LR1State lr1State : states) {
@@ -148,6 +153,7 @@ public class Grammar {
                     } else {
                         if (null != lr1State.addAction(lr1Item.nextInput, new Action(Action.REDUCE, tempRule.index))) {
                             System.out.println(lr1State);
+                            System.out.println(states.get(70));
                             throw new ParserException(0, 0, ParserException.GRAMMAR_EXCEPTION);
                         }
                     }

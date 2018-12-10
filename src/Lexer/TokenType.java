@@ -34,8 +34,8 @@ public class TokenType {
         keyWordTable.put("break", new TokenType("break", 11));
         keyWordTable.put("null", new TokenType("null", 12));
         keyWordTable.put("new", new TokenType("new", 13));
-        keyWordTable.put("true", new TokenType("true", 14));
-        keyWordTable.put("false", new TokenType("false", 15));
+        keyWordTable.put("true", new TokenType("constBoolean", 14));
+        keyWordTable.put("false", new TokenType("constBoolean", 15));
         keyWordTable.put("extends", new TokenType("extends", 16));
         keyWordTable.put("return", new TokenType("return", 17));
         keyWordTable.put("System", new TokenType("System", 101));
@@ -83,14 +83,18 @@ public class TokenType {
         operatorTable.put(",", new TokenType(",", 1027));
     }
 
-    static final TokenType IDENTIFIER = new TokenType("Identifier", 1100);
-    static final TokenType CONST_INTEGER = new TokenType("Const integer", 1101);
-    static final TokenType CONST_DOUBLE = new TokenType("Const double", 1102);
-    static final TokenType CONST_BOOL = new TokenType("Const bool", 1103);
-    static final TokenType SINGLE_LINE_COMMENT = new TokenType("Single line comment", 1106);
-    static final TokenType MULTI_LINE_COMMENT = new TokenType("Multi line comment", 1107);
-    static final TokenType CONST_CHAR = new TokenType("Const char", 1104);
-    static final TokenType CONST_STRING = new TokenType("Const string", 1105);
+    public static final TokenType IDENTIFIER = new TokenType("identifier", 1100);
+    public static final TokenType CONST_INTEGER = new TokenType("constInt", 1101);
+    public static final TokenType CONST_DOUBLE = new TokenType("constDouble", 1102);
+    public static final TokenType CONST_BOOL = new TokenType("constBoolean", 1102);
+    public static final TokenType SINGLE_LINE_COMMENT = new TokenType("Single line comment", 1106);
+    public static final TokenType MULTI_LINE_COMMENT = new TokenType("Multi line comment", 1107);
+    public static final TokenType CONST_CHAR = new TokenType("constChar", 1104);
+    public static final TokenType CONST_STRING = new TokenType("constString", 1105);
+
+    public String getDescription() {
+        return description;
+    }
 
     @Override
     public String toString() {

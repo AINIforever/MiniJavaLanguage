@@ -80,6 +80,7 @@ public class Grammar {
                 abstractElementList.add(rightAbstractElement);
                 continue;
             }
+            System.out.println(rightAbstractElement);
             throw new ParserException(0, 0, ParserException.WRONG_SYMBOL);
         }
         rules.add(new Rule(leftNotTerminalElement, abstractElementList, this.rules.size()));
@@ -136,9 +137,6 @@ public class Grammar {
             index++;
         }
 
-//        for (int i = 0, length = states.size(); i <length; i++)
-//            System.out.println(states.get(i));
-
         Rule tempRule;
         for (LR1State lr1State : states) {
             for (LR1Item lr1Item : lr1State.lr1ItemSet) {
@@ -153,7 +151,6 @@ public class Grammar {
                     } else {
                         if (null != lr1State.addAction(lr1Item.nextInput, new Action(Action.REDUCE, tempRule.index))) {
                             System.out.println(lr1State);
-                            System.out.println(states.get(70));
                             throw new ParserException(0, 0, ParserException.GRAMMAR_EXCEPTION);
                         }
                     }

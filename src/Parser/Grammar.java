@@ -80,7 +80,6 @@ public class Grammar {
                 abstractElementList.add(rightAbstractElement);
                 continue;
             }
-            System.out.println(rightAbstractElement);
             throw new ParserException(0, 0, ParserException.WRONG_SYMBOL);
         }
         rules.add(new Rule(leftNotTerminalElement, abstractElementList, this.rules.size()));

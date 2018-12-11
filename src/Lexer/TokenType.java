@@ -38,13 +38,13 @@ public class TokenType {
         keyWordTable.put("false", new TokenType("constBoolean", 15));
         keyWordTable.put("extends", new TokenType("extends", 16));
         keyWordTable.put("return", new TokenType("return", 17));
-        keyWordTable.put("System", new TokenType("System", 101));
         keyWordTable.put("Object", new TokenType("Object", 102));
         keyWordTable.put("int", new TokenType("int", 103));
         keyWordTable.put("String", new TokenType("String", 104));
         keyWordTable.put("double", new TokenType("double", 105));
         keyWordTable.put("char", new TokenType("char", 106));
         keyWordTable.put("boolean", new TokenType("boolean", 107));
+        keyWordTable.put("else", new TokenType("else", 108));
 
         reservedWordTable = new Hashtable<>();
         reservedWordTable.put("infinite", new TokenType("infinite", 300));

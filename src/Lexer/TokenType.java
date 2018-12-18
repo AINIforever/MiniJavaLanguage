@@ -96,6 +96,11 @@ public class TokenType {
         return description;
     }
 
+
+    public int getNumber() {
+        return number;
+    }
+
     @Override
     public String toString() {
         return String.format("%-30s %-8d", description, number);

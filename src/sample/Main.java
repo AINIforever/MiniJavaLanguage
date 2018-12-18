@@ -2,20 +2,22 @@ package sample;
 
 import Lexer.LexerScanner;
 import Lexer.Token;
-import Lexer.TokenType;
 import MiniException.LexicalException;
 import Parser.Grammar;
 import Parser.Node;
 import Parser.ParserException;
+import Parser.TerminalElement;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -27,9 +29,11 @@ import java.util.*;
 public class Main extends Application {
 
 
-    private static int radius = 30;
-    private static int distance = 30;
-    private static int verticalDistance = 65;
+    private static int verticalRadius = 20;
+    private static int horizontalRadius = 18;
+    private static int horizontalDistance = 30;
+    private static int verticalDistance = 52;
+    private static Color ELLIPSE_COLOR = Color.rgb(255, 153, 0);
 
     private static Font drawTextFont = Font.font(20);
 
@@ -38,61 +42,68 @@ public class Main extends Application {
         launch(args);
     }
 
-    public static void drawNode(Pane pane, Node node, int left, int high, Map<Node, Integer> map, int parentX, int parentY) {
+    public static void drawNode(Pane pane, Node node, double left, double height, Map<Node, Double> map, double parentX, double parentY) {
 
+        double x = left + map.get(node) / 2;
+        double y = height;
 
-        int x = left + map.get(node) / 2;
-        int y = high;
-
-        if (high != radius) {
+        if (!(parentX == 0 && parentY == 0)) {
             Line line = new Line(x, y, parentX, parentY);
             pane.getChildren().add(line);
         }
 
-        Circle circle = new Circle(radius, Color.rgb(255, 153, 0, 1.0));
-        circle.setTranslateX(x);
-        circle.setTranslateY(y);
-
         Text text = new Text(node.getAbstractElement().getText());
         text.setFont(drawTextFont);
         text.setTranslateX(x - text.getLayoutBounds().getWidth() / 2);
-        text.setTranslateY(y + (text.getBaselineOffset()  * 2 - text.getLayoutBounds().getHeight()) / 2);
+        text.setTranslateY(y + (text.getBaselineOffset() * 2 - text.getLayoutBounds().getHeight()) / 2);
 
-        int tempLeft = 0;
+        Ellipse ellipse = new Ellipse(x, y, text.getLayoutBounds().getWidth() / 2 + horizontalRadius, verticalRadius);
+        ellipse.setFill(ELLIPSE_COLOR);
+
+        double tempLeft = 0;
+        for (Node son : node.getSons())
+            tempLeft += map.get(son);
+        tempLeft += Math.max(0, node.getSons().size() -1) * horizontalDistance;
+        if (tempLeft < map.get(node))
+            tempLeft = (map.get(node) - tempLeft) / 2;
+        else
+            tempLeft = 0;
+
         for (Node son : node.getSons()) {
-            drawNode(pane, son, left + tempLeft, high + verticalDistance, map, x, y);
-            tempLeft += map.get(son) + distance;
+            drawNode(pane, son, left + tempLeft, height + verticalDistance, map, x, y);
+            tempLeft += map.get(son) + horizontalDistance;
         }
-        pane.getChildren().add(circle);
+
+        pane.getChildren().add(ellipse);
         pane.getChildren().add(text);
     }
 
     public static void drawTree(Pane pane, Node node) {
-
-
-        Map<Node, Integer> nodeWidthMap = new HashMap<>();
+        Map<Node, Double> nodeWidthMap = new HashMap<>();
 
         calculateWidth(nodeWidthMap, node);
 
-        drawNode(pane, node, 0, radius, nodeWidthMap, 0, 0);
+        drawNode(pane, node, 0, verticalRadius, nodeWidthMap, 0, 0);
     }
 
-    public static void calculateWidth(Map<Node, Integer> map, Node parent) {
+    public static void calculateWidth(Map<Node, Double> map, Node parent) {
 
         List<Node> sons = parent.getSons();
-        if (sons.size() == 0) {
-            map.put(parent, radius * 2);
-            return;
-        }
+        double sonWidth = 0, parentWidth;
 
-        int width = 0;
-
-        for (Node son : parent.getSons()) {
+        for (Node son : sons) {
             calculateWidth(map, son);
-            width += map.get(son) + distance;
+            sonWidth += map.get(son);
         }
+        sonWidth += Math.max(sons.size() - 1, 0) * horizontalDistance;
 
-        map.put(parent, width - distance);
+        Text text = new Text();
+        text.setText(parent.getAbstractElement().getText());
+        text.setFont(drawTextFont);
+        parentWidth = text.getLayoutBounds().getWidth() + horizontalRadius * 2;
+
+
+        map.put(parent, Math.max(parentWidth, sonWidth));
     }
 
 
@@ -147,36 +158,35 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                try {
+        button.setOnMouseClicked(event -> {
+            try {
 
-                    List<Token> tokens = LexerScanner.scan(textArea.getText());
-                    List<Node> nodes = new ArrayList<>();
-                    for (Token token : tokens)
-                    {
-                        nodes.add(new Node(grammar.getTerminalElementMap().get(token.getTokenType().getDescription())));
-                    }
-
-                    Node root = grammar.parse(nodes);
-
-                    Pane pane = new Pane();
-                    ScrollPane scrollPane = new ScrollPane();
-                    scrollPane.setContent(pane);
-                    drawTree(pane, root);
-                    Stage stage = new Stage();
-                    Scene scene = new Scene(scrollPane);
-                    stage.setScene(scene);
-                    stage.show();
-
-
-                    System.out.println("OK");
-                } catch (LexicalException e) {
-                    e.printStackTrace();
-                } catch (ParserException e) {
-                    e.printStackTrace();
+                List<Token> tokens = LexerScanner.scan(textArea.getText());
+                List<Node> nodes = new ArrayList<>();
+                Map<String, TerminalElement> map = grammar.getTerminalElementMap();
+                for (Token token : tokens)
+                {
+                    if (token.getTokenType().getNumber() != 1106 && token.getTokenType().getNumber() != 1107)
+                        nodes.add(new Node(map.get(token.getTokenType().getDescription())));
                 }
+
+                Node root = grammar.parse(nodes);
+
+                Pane pane1 = new Pane();
+                ScrollPane scrollPane = new ScrollPane();
+                scrollPane.setContent(pane1);
+                drawTree(pane1, root);
+                Stage stage = new Stage();
+                Scene scene1 = new Scene(scrollPane);
+                stage.setScene(scene1);
+                stage.show();
+
+
+                System.out.println("OK");
+            } catch (LexicalException e) {
+                e.printStackTrace();
+            } catch (ParserException e) {
+                e.printStackTrace();
             }
         });
 
